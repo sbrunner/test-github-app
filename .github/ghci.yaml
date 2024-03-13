@@ -2,7 +2,8 @@
 
 auto-review:
   condition:
-    - authon: sbrunner
+    - author: sbrunner
 
-auto-close:
-  test: hi
+auto-merge:
+  condition:
+    - author: sbrunner
