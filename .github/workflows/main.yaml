@@ -1,0 +1,16 @@
+name: Continuous integration
+
+on:
+  pull_request:
+
+jobs:
+  main:
+    name: Continuous integration
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+
+    steps:
+      - name: GitHub event
+        run: echo ${GITHUB_EVENT} | python3 -m json.tool
+        env:
+          GITHUB_EVENT: ${{ toJson(github) }}
