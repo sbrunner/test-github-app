@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://geoservices-int.camptocamp.com/github/schema.json
+
+auto-review:
+  condition:
+    - authon: sbrunner
+
+auto-close:
+  test: hi
