@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://geoservices-int.camptocamp.com/github/schema.json
 
 auto-review:
-  condition:
+  conditions:
     - author: sbrunner
 
 auto-merge:
-  condition:
+  conditions:
     - author: sbrunner
