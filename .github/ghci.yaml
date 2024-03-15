@@ -3,6 +3,7 @@
 auto-review:
   conditions:
     - author: sbrunner
+    - author: renovate[bot]
 
 auto-merge:
   conditions:
