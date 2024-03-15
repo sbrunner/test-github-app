@@ -3,6 +3,9 @@ name: Auto reviews, merge and close pull requests
 on:
   pull_request:
 
+permissions:
+  pull-requests: write
+
 jobs:
   auto-merge:
     name: Auto reviews, merge and close pull requests
