@@ -16,7 +16,7 @@ jobs:
         env:
           GITHUB_EVENT: ${{ toJson(github) }}
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: echo "test" >> README.md
       - run: git diff --patch > patch.diff
       # Upload artifact
