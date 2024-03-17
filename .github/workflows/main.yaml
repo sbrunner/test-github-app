@@ -14,3 +14,12 @@ jobs:
         run: echo ${GITHUB_EVENT} | python3 -m json.tool
         env:
           GITHUB_EVENT: ${{ toJson(github) }}
+
+      - run: echo "test" >> READMR.md
+      - run: git diff > patch.diff
+      # Upload artifact
+      - uses: actions/upload-artifact@v2
+        with:
+          name: do.diff
+          path: patch.diff
+
