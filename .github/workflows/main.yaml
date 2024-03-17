@@ -2,6 +2,7 @@ name: Continuous integration
 
 on:
   pull_request:
+  push:
 
 jobs:
   main:
@@ -15,7 +16,7 @@ jobs:
         env:
           GITHUB_EVENT: ${{ toJson(github) }}
 
-      - run: echo "test" >> READMR.md
+      - run: echo "test" >> README.md
       - run: git diff > patch.diff
       # Upload artifact
       - uses: actions/upload-artifact@v2
