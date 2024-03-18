@@ -2,7 +2,8 @@ name: Continuous integration
 
 on:
   pull_request:
-  push:
+
+permissions: {}
 
 jobs:
   main:
@@ -25,3 +26,11 @@ jobs:
           name: do.diff
           path: patch.diff
 
+      - run: git reset --hard HEAD^1 --
+      - run: echo "test" > README.md
+      - run: git add README.md
+      - run: git config --global user.email "you@example.com"
+      - run: git config --global user.name "Your Name"
+      - run: git commit -m f
+      - run: git log
+      - run: git push
