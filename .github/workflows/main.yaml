@@ -18,6 +18,23 @@ jobs:
           GITHUB_EVENT: ${{ toJson(github) }}
 
       - uses: actions/checkout@v4
+
+      - uses: actions/cache@v4
+        with:
+           path: ~/.cache/pre-commit
+           key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
+           restore-keys: "pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}\npre-commit-"
+      - run: pip install pre-commit
+      - run: pre-commit run --all-files
+      - run: git diff --exit-code --patch > /tmp/pre-commit.patch || true
+        if: failure()
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Apply pre-commit fix.patch
+          path: /tmp/pre-commit.patch
+          retention-days: 1
+        if: failure()
+
       - run: echo "test" >> README.md
       - run: git diff --patch > patch.diff
       # Upload artifact
