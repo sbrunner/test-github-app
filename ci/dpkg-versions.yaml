@@ -1,3 +1,2 @@
 sbrunner/test:latest:
-  ubuntu_22_04/bsdutils: 1:2.37.2-4ubuntu3.3
-  
+  ubuntu_22_04/bsdutils: 1:2.37.2-4ubuntu3.4
