@@ -11,6 +11,7 @@ jobs:
     timeout-minutes: 5
 
     steps:
+      - run: 'false'
       - name: GitHub event
         run: echo ${GITHUB_EVENT} | python3 -m json.tool
         env:
