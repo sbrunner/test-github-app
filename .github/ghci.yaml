@@ -8,3 +8,9 @@ auto-review:
 auto-merge:
   conditions:
     - author: sbrunner
+
+audit:
+  enabled: false
+
+versions:
+  enabled: false
