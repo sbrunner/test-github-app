@@ -24,4 +24,4 @@ jobs:
       - run: c2cciutils-env
       - name: Print the event
         run: |
-          echo "Publish: ${{ github.event.client_payload.publish }}"
+          echo "Publish: ${{ github.client_payload.publish }}"
