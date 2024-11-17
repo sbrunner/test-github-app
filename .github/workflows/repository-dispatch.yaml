@@ -1,0 +1,21 @@
+name: Print repository dispatch event
+
+on:
+  repository_dispatch:
+    types:
+      - published
+    inputs:
+      publish:
+        description: Published content
+        required: true
+
+jobs:
+  print:
+    runs-on: ubuntu-24.04
+    name: Print repository dispatch event
+    timeout-minutes: 10
+
+    steps:
+      - name: Print the event
+        run: |
+          echo "Publish: ${{ github.event.client_payload.publish }}"
