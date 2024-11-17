@@ -193,8 +193,8 @@ prospector-profile-duplicated = "0.3.0"
 
 [build-system]
 requires = [
-  "poetry-core==1.9.0",
-  "poetry-dynamic-versioning[plugin]==1.2.0",
+  "poetry-core==1.9.1",
+  "poetry-dynamic-versioning[plugin]==1.4.1",
   "poetry-plugin-tweak-dependencies-version==1.5.2",
   "poetry-plugin-drop-python-upper-constraint==1.0.0"
 ]
