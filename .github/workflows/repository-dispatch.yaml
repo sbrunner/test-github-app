@@ -5,7 +5,7 @@ on:
     types:
       - published
     inputs:
-      publish:
+      content:
         description: Published content
         required: true
 
