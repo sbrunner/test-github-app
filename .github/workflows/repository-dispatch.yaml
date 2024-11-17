@@ -22,6 +22,8 @@ jobs:
           python-version: '3.11'
       - run: pip install 'c2cciutils<1.7'
       - run: c2cciutils-env
+        env:
+          GITHUB_EVENT: ${{ toJson(github) }}
       - name: Print the event
         run: |
           echo "Publish: ${{ github.client_payload.content }}"
