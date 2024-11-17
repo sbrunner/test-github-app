@@ -26,4 +26,4 @@ jobs:
           GITHUB_EVENT: ${{ toJson(github) }}
       - name: Print the event
         run: |
-          echo "Publish: ${{ github.client_payload.content }}"
+          echo "Publish: ${{ github.event.client_payload.content }}"

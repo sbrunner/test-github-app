@@ -14,12 +14,12 @@ repository = 'sbrunner/test-github-app'
 event_type = 'published'
 
 published = {
-    'content': json.dumps({
+    'content': {
     'items': [
         {
             "name": "test"
         }
-    ]})
+    ]}
 }
 id_ = random.randint(1, 100000)  # nosec # noqa: S311
 published["id"] = id_
