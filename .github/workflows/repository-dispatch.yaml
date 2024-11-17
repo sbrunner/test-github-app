@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.11'
-      - run: pip install 'c2cciutils<=1.7'
+      - run: pip install 'c2cciutils<1.7'
       - run: c2cciutils-env
       - name: Print the event
         run: |
