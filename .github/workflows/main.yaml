@@ -7,7 +7,7 @@ on:
 jobs:
   main:
     name: Continuous integration
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
 
     steps:
@@ -17,11 +17,11 @@ jobs:
         env:
           GITHUB_EVENT: ${{ toJson(github) }}
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - run: echo "test" >> README.md
       - run: git diff --patch > patch.diff
       # Upload artifact
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: do.diff
           path: patch.diff
